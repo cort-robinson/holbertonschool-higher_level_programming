@@ -15,13 +15,10 @@ int check_cycle(listint_t *list)
 
 	while (check != NULL && check->next != NULL)
 	{
-		while (head != NULL && head->next != NULL)
-		{
-			if (head == check)
-				return (1);
-			head = head->next;
-		}
-		check = check->next;
+		head = head->next;
+		check = check->next->next;
+		if (head == check)
+			return (1);
 	}
 	return (0);
 }
