@@ -7,3 +7,4 @@ def uppercase(str):
             i -= 32
         strout += chr(i)
     print("{:s}".format(strout))
+    
