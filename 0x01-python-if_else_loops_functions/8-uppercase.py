@@ -6,4 +6,4 @@ def uppercase(str):
         if 97 <= i <= 122:
             i -= 32
         strout += chr(i)
-    print(strout)
+    print("{:s}".format(strout))
