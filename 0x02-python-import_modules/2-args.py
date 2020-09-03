@@ -2,11 +2,12 @@
 if __name__ == "__main__":
     from sys import argv
     argcount = len(argv) - 1
-    print("{:d} argument".format(argcount), end="")
-    if argcount != 1:
-        print("s." if argcount == 0 else "s")
+    if argcount == 1:
+        print("{:d} argument:".format(argcount))
+    elif argcount == 0:
+        print("{:d} arguments.".format(argcount))
     else:
-        print(":")
+        print("{:d} arguments:".format(argcount))
     if argcount > 0:
         i = 1
         while i <= argcount:
