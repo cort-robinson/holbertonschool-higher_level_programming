@@ -20,6 +20,8 @@ def value(n):
 def roman_to_int(roman_string):
     sum = 0
     i = 0
+    if type(roman_string) is not str or roman_string is None:
+        return 0
     while i < (len(roman_string)):
         current_v = value(roman_string[i])
         if i + 1 < len(roman_string):
