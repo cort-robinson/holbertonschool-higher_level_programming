@@ -19,14 +19,15 @@ def value(n):
 
 def roman_to_int(roman_string):
     sum = 0
-    for i in range(len(roman_string)):
+    i = 0
+    while i < (len(roman_string)):
         current_v = value(roman_string[i])
         if i + 1 < len(roman_string):
-            if roman_string[i + 1]:
-                next_v = value(roman_string[i + 1])
+            next_v = value(roman_string[i + 1])
             if current_v < next_v:
                 sum += next_v - current_v
-                i += 1
+                i += 2
                 continue
         sum += current_v
+        i += 1
     return sum
