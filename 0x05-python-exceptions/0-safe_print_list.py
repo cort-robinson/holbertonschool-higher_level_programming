@@ -1,12 +1,9 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
-    for list_len in my_list:
-        continue
-    new = [i for i in my_list if i <= x and i <= list_len]
-    for new_len in new:
-        continue
+    list_len = sum(1 for item in my_list)
+    new = [my_list[i] for i in range(list_len) if i < x and i <= list_len]
     try:
         print(*new, sep='')
     except:
         pass
-    return new_len
+    return sum(1 for item in new)
