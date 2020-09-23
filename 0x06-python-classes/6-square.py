@@ -46,10 +46,11 @@ class Square:
 
     def my_print(self):
         """Print the Square instance to stdout"""
-        if self.__position[1] > 0:
-            print('\n' * self.__position[1], end="")
-        for _ in range(self.__size):
-            print(" " * self.__position[0], end="")
-            print('#' * self.__size)
         if self.__size == 0:
             print()
+        else:
+            if self.__position[1] > 0:
+                print('\n' * self.__position[1], end="")
+            for _ in range(self.__size):
+                print(" " * self.__position[0], end="")
+                print('#' * self.__size)
