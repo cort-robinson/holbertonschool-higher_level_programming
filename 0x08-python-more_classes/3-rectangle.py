@@ -50,6 +50,6 @@ class Rectangle:
     def __str__(self):
         """Return visual representation of rectangle"""
         if self.__width == 0 or self.__height == 0:
-            return 0
+            return ""
         row = ('#' * self.__width) + '\n'
         return (row * (self.__height - 1)) + ('#' * self.__width)
