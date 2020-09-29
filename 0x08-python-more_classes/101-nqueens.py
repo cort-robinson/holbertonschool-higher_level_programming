@@ -4,6 +4,7 @@ from sys import argv
 N = 0
 board = []
 
+
 def argchecks():
     if len(argv) != 2:
         print("Usage: nqueens N")
