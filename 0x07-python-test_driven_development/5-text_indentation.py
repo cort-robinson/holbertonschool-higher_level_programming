@@ -13,5 +13,8 @@ def text_indentation(text):
     new_text_list = [letter + "\n\n" if letter in ".?:"
                      else letter for letter in text]
     new_text = "".join(character for character in new_text_list).splitlines()
-    for _ in new_text:
-        print(str(_).strip(), end='\n')
+    for i in range(len(new_text)):
+        if i == len(new_text) - 1:
+            print(str(new_text[i]).strip(), end='')
+        else:
+            print(str(new_text[i]).strip())
