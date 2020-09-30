@@ -15,9 +15,9 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_returnval(self):
         """Test argument types"""
-        self.assertEqual(max_integer([1, 2, 3, 4], 4))
-        self.assertEqual(max_integer([1, 3, 4, 2], 4))
-        self.assertEqual(max_integer([-1, -2, -3, -4], -1))
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+        self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer(), None)
 
