@@ -12,4 +12,6 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     new_text_list = [letter + "\n\n" if letter in ".?:"
                      else letter for letter in text]
-    print("".join(character for character in new_text_list), end='')
+    new_text = "".join(character for character in new_text_list).splitlines()
+    for _ in new_text:
+        print(str(_).strip(), end='\n')
