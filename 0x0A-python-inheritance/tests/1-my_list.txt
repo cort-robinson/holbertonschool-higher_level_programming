@@ -1,3 +1,4 @@
+>>>MyList = __import__('1-my_list').MyList
 >>> print_sorted = __import__('1-my_list').MyList.print_sorted
 
 
@@ -32,3 +33,43 @@ ValueError: invalid literal for int() with base 10: 'inf'
 
 >>> print_sorted([float('Inf')])
 [inf]
+
+>>> a_list = MyList()
+>>> a_list.append(1)
+>>> a_list.append(4)
+>>> a_list.append(2)
+>>> a_list.append(3)
+>>> a_list.append(5)
+>>> a_list.append(0)
+>>> a_list.print_sorted()
+[0, 1, 2, 3, 4, 5]
+
+>>> a_list = MyList()
+>>> a_list.append(-1)
+>>> a_list.append(-4)
+>>> a_list.append(-2)
+>>> a_list.append(-3)
+>>> a_list.append(-5)
+>>> a_list.append(0)
+>>> a_list.print_sorted()
+[-5, -4, -3, -2, -1, 0]
+
+>>> a_list = MyList()
+>>> a_list.print_sorted()
+[]
+
+>>> a_list.append(98)
+>>> a_list.print_sorted()
+[98]
+
+>>> a_list.append(128)
+>>> a_list.print_sorted()
+[98, 128]
+
+>>> a_list.append(256)
+>>> a_list.print_sorted()
+[98, 128, 256]
+
+>>> a_list.append(1028)
+>>> a_list.print_sorted()
+[98, 128, 256, 1028]
