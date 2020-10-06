@@ -91,3 +91,14 @@ TypeError: 'MyList' object is not callable
 
 >>> MyList()
 []
+
+>>> MyList(5)
+Traceback (most recent call last):
+TypeError: 'int' object is not iterable
+
+>>> MyList("Holberton")
+['H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n']
+
+>>> MyList(5, 4, 3, 2)
+Traceback (most recent call last):
+TypeError: list() takes at most 1 argument (4 given)
