@@ -53,9 +53,10 @@ ValueError: invalid literal for int() with base 10: 'inf'
 >>> a_list.append(0)
 >>> print(a_list)
 [-1, -4, -2, -3, -5, 0]
-
 >>> a_list.print_sorted()
 [-5, -4, -3, -2, -1, 0]
+>>> print(a_list)
+[-1, -4, -2, -3, -5, 0]
 
 >>> a_list = MyList()
 >>> a_list.print_sorted()
@@ -114,3 +115,10 @@ False
 
 >>> issubclass(MyList, list)
 True
+
+>>> a_list = MyList()
+>>> print(a_list)
+[]
+
+>>> a_list.print_sorted
+<bound method MyList.print_sorted of []>
