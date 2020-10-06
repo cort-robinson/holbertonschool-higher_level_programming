@@ -5,4 +5,5 @@
 class BaseGeometry:
     """Contains unfinished area method"""
     def area(self):
+        """Unfinished method"""
         raise Exception("area() is not implemented")
