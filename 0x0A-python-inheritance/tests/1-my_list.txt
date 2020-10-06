@@ -51,6 +51,9 @@ ValueError: invalid literal for int() with base 10: 'inf'
 >>> a_list.append(-3)
 >>> a_list.append(-5)
 >>> a_list.append(0)
+>>> print(a_list)
+[-1, -4, -2, -3, -5, 0]
+
 >>> a_list.print_sorted()
 [-5, -4, -3, -2, -1, 0]
 
@@ -102,3 +105,12 @@ TypeError: 'int' object is not iterable
 >>> MyList(5, 4, 3, 2)
 Traceback (most recent call last):
 TypeError: list() takes at most 1 argument (4 given)
+
+>>> type(MyList())
+<class '1-my_list.MyList'>
+
+>>> isinstance(MyList, list)
+False
+
+>>> issubclass(MyList, list)
+True
