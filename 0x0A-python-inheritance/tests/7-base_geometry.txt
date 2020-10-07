@@ -65,3 +65,7 @@ TypeError: Holbie must be an integer
 >>> bg.integer_validator("Holbie", (2, 4))
 Traceback (most recent call last):
 TypeError: Holbie must be an integer
+
+>>> bg.integer_validator("Holbie", None)
+Traceback (most recent call last):
+TypeError: Holbie must be an integer
