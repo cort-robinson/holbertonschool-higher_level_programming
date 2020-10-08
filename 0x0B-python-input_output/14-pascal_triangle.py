@@ -3,6 +3,8 @@
 
 
 def pascal_triangle(n):
+    if n <= 0:
+        return []
     for i in range(n):
         r = []
         l = len(r)
