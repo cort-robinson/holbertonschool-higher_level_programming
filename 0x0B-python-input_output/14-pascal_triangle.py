@@ -3,6 +3,7 @@
 
 
 def pascal_triangle(n):
+    """Returns Pascal's triangle of n"""
     r = []
     for i in range(n):
         l = len(r)
