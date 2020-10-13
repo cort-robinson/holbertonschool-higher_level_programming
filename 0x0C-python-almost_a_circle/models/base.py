@@ -28,3 +28,9 @@ class Base:
                         if list_objs is not None else []
         with open(cls.__name__ + ".json", 'w') as file:
             file.write(cls.to_json_string(dictionaries))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
