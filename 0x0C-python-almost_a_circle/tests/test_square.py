@@ -27,6 +27,34 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.size, 128)
         self.assertEqual(s1.x, 256)
         self.assertEqual(s1.y, 1024)
+        s2 = Square(1, 1, 1, 1)
+        s2.update(id=98, size=128, x=256, y=1024)
+        self.assertEqual(s2.id, 98)
+        self.assertEqual(s2.size, 128)
+        self.assertEqual(s2.x, 256)
+        self.assertEqual(s2.y, 1024)
+
+    def test_typeError(self):
+        with self.assertRaises(TypeError):
+            Square()
+        with self.assertRaises(TypeError):
+            Square(None)
+        with self.assertRaises(TypeError):
+            Square("Holberton")
+        with self.assertRaises(TypeError):
+            Square("Holberton", 29)
+        with self.assertRaises(TypeError):
+            Square(98, 128, "Holberton")
+
+    def test_valueError(self):
+        with self.assertRaises(ValueError):
+            Square(0, 98, 128, 256)
+        with self.assertRaises(ValueError):
+            Square(98, -1, -4, 128)
+        with self.assertRaises(ValueError):
+            Square(98, 128, -4, 256)
+        with self.assertRaises(ValueError):
+            Square(-98, 128, 256, 512)
 
     def test_to_dictionary(self):
         s1 = Square(2, 4, 5, 6)

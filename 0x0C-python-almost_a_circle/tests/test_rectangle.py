@@ -45,6 +45,28 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.to_dictionary(), {"id": 9, "width": 2,
                                               "height": 4, "x": 5, "y": 6})
 
+    def test_typeError(self):
+        with self.assertRaises(TypeError):
+            Rectangle()
+        with self.assertRaises(TypeError):
+            Rectangle(None)
+        with self.assertRaises(TypeError):
+            Rectangle("Holberton")
+        with self.assertRaises(TypeError):
+            Rectangle("Holberton", 29)
+        with self.assertRaises(TypeError):
+            Rectangle(98, 128, "Holberton", 256)
+
+    def test_valueError(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 98, 128, 256, 512)
+        with self.assertRaises(ValueError):
+            Rectangle(98, -1, -4, 128, 256)
+        with self.assertRaises(ValueError):
+            Rectangle(98, 128, -4, 256, 512)
+        with self.assertRaises(ValueError):
+            Rectangle(-98, 128, 256, 512, 1024)
+
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
