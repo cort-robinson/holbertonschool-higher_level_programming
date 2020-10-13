@@ -91,14 +91,13 @@ class Rectangle(Base):
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
-        if len(args) == 1:
-            self.id = args[0]
-        elif len(args) == 2:
-            self.id, self.width = [arg for arg in args]
-        elif len(args) == 3:
-            self.id, self.width, self.height = [arg for arg in args]
-        elif len(args) == 4:
-            self.id, self.width, self.height, self.x = [arg for arg in args]
-        elif len(args) == 4:
-            self.id, self.width, self.height, self.x, = [arg for arg in args]
+    def update(self, *args, **kwargs):
+        if args:
+            attributes = ["id", "width", "height", "x", "y"]
+            i = 0
+            for v in args:
+                setattr(self, attributes[i], v)
+                i += 1
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
