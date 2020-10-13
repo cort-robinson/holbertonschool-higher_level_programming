@@ -49,6 +49,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle()
         with self.assertRaises(TypeError):
+            Rectangle(98)
+        with self.assertRaises(TypeError):
+            Rectangle(-98)
+        with self.assertRaises(TypeError):
             Rectangle(None)
         with self.assertRaises(TypeError):
             Rectangle("Holberton")
