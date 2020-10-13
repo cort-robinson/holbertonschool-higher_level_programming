@@ -7,6 +7,7 @@ class Rectangle(Base):
     """Rectangle model class inheriting from Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initializer"""
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -31,10 +32,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Setter"""
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -43,10 +46,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Getter"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Setter"""
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -55,10 +60,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Getter"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Setter"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -67,10 +74,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Getter"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Setter"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -78,9 +87,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """Returns area of instance"""
         return self.width * self.height
 
     def display(self):
+        """Print visual representation of instance"""
         if self.width == 0 or self.height == 0:
             print("")
         row = (' ' * self.x) + ('#' * self.width) + '\n'
@@ -88,10 +99,12 @@ class Rectangle(Base):
             (' ' * self.x) + ('#' * self.width)))
 
     def __str__(self):
+        """Overrides ___str___"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
+        """Updates instance attributes"""
         if args:
             attributes = ["id", "width", "height", "x", "y"]
             i = 0
@@ -103,5 +116,6 @@ class Rectangle(Base):
                 setattr(self, k, v)
 
     def to_dictionary(self):
+        """Returns dict rep of instance"""
         return {"id": self.id, "width": self.width,
                 "height": self.height, "x": self.x, "y": self.y}
