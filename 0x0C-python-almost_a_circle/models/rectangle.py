@@ -83,8 +83,9 @@ class Rectangle(Base):
     def display(self):
         if self.width == 0 or self.height == 0:
             print("")
-        row = ('#' * self.width) + '\n'
-        print(row * (self.height - 1) + ('#' * self.width))
+        row = (' ' * self.x) + ('#' * self.width) + '\n'
+        print(('\n' * self.y) + row * (self.height - 1) + (
+            (' ' * self.x) + ('#' * self.width)))
 
     def __str__(self):
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
