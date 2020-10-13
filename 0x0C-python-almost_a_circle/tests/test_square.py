@@ -16,6 +16,23 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.y, 100)
         self.assertEqual(s1.id, 101)
 
+    def test__str__(self):
+        s1 = Square(98, 128, 256, 1024)
+        self.assertEqual(s1.__str__(), "[Square] (1024) 128/256 - 98")
+
+    def test_update(self):
+        s1 = Square(1, 1, 1, 1)
+        s1.update(98, 128, 256, 1024)
+        self.assertEqual(s1.id, 98)
+        self.assertEqual(s1.size, 128)
+        self.assertEqual(s1.x, 256)
+        self.assertEqual(s1.y, 1024)
+
+    def test_to_dictionary(self):
+        s1 = Square(2, 4, 5, 6)
+        self.assertEqual(s1.to_dictionary(), {"id": 6, "size": 2,
+                                              "x": 4, "y": 5})
+
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
