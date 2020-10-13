@@ -20,6 +20,10 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b4.id, 256)
         b5 = Base()
         self.assertEqual(b5.id, 3)
+        b6 = Base(-98)
+        self.assertEqual(b6.id, -98)
+        b7 = Base(None)
+        self.assertEqual(b7.id, 4)
 
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
