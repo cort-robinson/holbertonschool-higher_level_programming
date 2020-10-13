@@ -46,6 +46,7 @@ class Base:
     def load_from_file(cls):
         try:
             with open(cls.__name__ + ".json") as file:
-                return [cls.create(**objs) for objs in cls.from_json_string(file.read())]
-        except:
+                return [cls.create(**objs) for objs in cls.from_json_string(
+                    file.read())]
+        except Exception:
             return []
