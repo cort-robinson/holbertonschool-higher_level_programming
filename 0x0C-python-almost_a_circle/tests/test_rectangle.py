@@ -16,6 +16,20 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.x, 100)
         self.assertEqual(r1.y, 101)
         self.assertEqual(r1.id, 102)
+        r2 = Rectangle(98, 256)
+        self.assertEqual(r2.width, 98)
+        self.assertEqual(r2.height, 256)
+
+    def test_area(self):
+        """Test area method"""
+        r1 = Rectangle(3, 4)
+        self.assertEqual(r1.area(), 12)
+        r2 = Rectangle(98, 256)
+        self.assertEqual(r2.area(), 25088)
+
+    def test__str__(self):
+        r1 = Rectangle(98, 128, 256, 1024, 2048)
+        self.assertEqual(r1.__str__(), "[Rectangle] (2048) 256/1024 - 98/128")
 
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
