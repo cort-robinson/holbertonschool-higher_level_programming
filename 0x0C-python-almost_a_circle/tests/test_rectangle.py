@@ -8,8 +8,8 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     """Test class for class Rectangle"""
 
-    def test_id(self):
-        """Test for id functionality"""
+    def test_attributes(self):
+        """Test attribute initialization"""
         r1 = Rectangle(98, 99, 100, 101, 102)
         self.assertEqual(r1.width, 98)
         self.assertEqual(r1.height, 99)
