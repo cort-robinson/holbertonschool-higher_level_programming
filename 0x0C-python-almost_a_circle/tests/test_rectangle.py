@@ -31,6 +31,20 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(98, 128, 256, 1024, 2048)
         self.assertEqual(r1.__str__(), "[Rectangle] (2048) 256/1024 - 98/128")
 
+    def test_update(self):
+        r1 = Rectangle(1, 1, 1, 1, 1)
+        r1.update(98, 128, 256, 1024, 2048)
+        self.assertEqual(r1.id, 98)
+        self.assertEqual(r1.width, 128)
+        self.assertEqual(r1.height, 256)
+        self.assertEqual(r1.x, 1024)
+        self.assertEqual(r1.y, 2048)
+
+    def test_to_dictionary(self):
+        r1 = Rectangle(2, 4, 5, 6, 9)
+        self.assertEqual(r1.to_dictionary(), {"id": 9, "width": 2,
+                                              "height": 4, "x": 5, "y": 6})
+
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
