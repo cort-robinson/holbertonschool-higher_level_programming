@@ -17,10 +17,12 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.id, 101)
 
     def test__str__(self):
+        """Test __str__ method"""
         s1 = Square(98, 128, 256, 1024)
         self.assertEqual(s1.__str__(), "[Square] (1024) 128/256 - 98")
 
     def test_update(self):
+        """Test update method"""
         s1 = Square(1, 1, 1, 1)
         s1.update(98, 128, 256, 1024)
         self.assertEqual(s1.id, 98)
@@ -35,6 +37,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s2.y, 1024)
 
     def test_typeError(self):
+        """Test typeError raises"""
         with self.assertRaises(TypeError):
             Square()
         with self.assertRaises(TypeError):
@@ -47,6 +50,7 @@ class TestSquare(unittest.TestCase):
             Square(98, 128, "Holberton")
 
     def test_valueError(self):
+        """Test valueError raises"""
         with self.assertRaises(ValueError):
             Square(0, 98, 128, 256)
         with self.assertRaises(ValueError):
@@ -57,6 +61,7 @@ class TestSquare(unittest.TestCase):
             Square(-98, 128, 256, 512)
 
     def test_to_dictionary(self):
+        """Test to_dictionary method"""
         s1 = Square(2, 4, 5, 6)
         self.assertEqual(s1.to_dictionary(), {"id": 6, "size": 2,
                                               "x": 4, "y": 5})
