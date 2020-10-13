@@ -34,3 +34,10 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        args = sorted([v for k, v in dictionary.items()], reverse=True)
+        new = cls(*args)
+        new.update(**dictionary)
+        return new
