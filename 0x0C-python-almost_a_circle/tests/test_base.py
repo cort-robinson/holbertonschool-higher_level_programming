@@ -24,6 +24,20 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b6.id, -98)
         b7 = Base(None)
         self.assertEqual(b7.id, 4)
+        b8 = Base(4.4)
+        self.assertEqual(b8.id, 4.4)
+
+    def test_from_to_json_string(self):
+        """Test to_json_string and from_json_string methods"""
+        dict1 = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
+        json_dictionary = Base.to_json_string([dict1])
+        self.assertEqual(dict1, {'x': 2, 'width': 10, 'id': 1,
+                                 'height': 7, 'y': 8})
+        self.assertEqual(Base.from_json_string(json_dictionary)[0], dict1)
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string([]), [])
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
 
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
