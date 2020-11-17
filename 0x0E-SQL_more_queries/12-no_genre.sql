@@ -1,4 +1,4 @@
--- Lists all shows contained in database hbtn_0d_tvshows
+-- Lists all shows contained in database hbtn_0d_tvshows without a genre linked
 SELECT title,
     genre_id
 FROM tv_shows
