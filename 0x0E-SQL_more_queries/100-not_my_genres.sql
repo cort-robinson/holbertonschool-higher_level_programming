@@ -1,4 +1,4 @@
--- Uses the hbtn_0d_tvshows database to lists all genres of the show Dexter
+-- Uses the hbtn_0d_tvshows database to lists all genres not related to Dexter
 SELECT g.name
 FROM tv_genres AS g
 WHERE g.name NOT IN (
