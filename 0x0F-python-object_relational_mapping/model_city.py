@@ -9,8 +9,8 @@ from sqlalchemy.sql.schema import ForeignKey
 from model_state import Base, State
 
 
-class State(Base):
-    """State Class containing id and name definitions"""
+class City(Base):
+    """City Class containing id and name definitions"""
     __tablename__ = "cities"
     id = Column(Integer, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
