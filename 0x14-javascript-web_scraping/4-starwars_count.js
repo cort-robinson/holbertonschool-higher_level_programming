@@ -7,5 +7,5 @@ request(process.argv[2], (error, response, body) => {
 
   const data = JSON.parse(body).results;
   const films = data.filter(film => film.characters.includes('https://swapi-api.hbtn.io/api/people/18/'));
-  console.log(films.length);
+  console.log(films.length.toString());
 });
