@@ -7,9 +7,10 @@ request(process.argv[2], (error, response, body) => {
 
   const data = JSON.parse(body).results;
   const films = data.filter(film => {
-    for (character of film.characters) {
+    for (const character of film.characters) {
       if (character.includes('18')) return (true);
     }
-  })
+    return (false);
+  });
   console.log(films.length);
 });
